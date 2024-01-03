@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="day20.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>I'm Sanjay L N </h1>
+        <p>Fresher | Front-end Developer</p>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>I am a recent graduate looking to kickstart my career as a web developer. I have a strong passion for coding and love to create responsive and user-friendly websites.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <p>HTML <br>CSS <br> Javascript</p>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1 : <br><br>Calculator </h3><br>
+            <p>Calculator built using html,Css,Javascript</p>
+        </div>
+        <div class="project">
+            <h3></h3>
+            <p></p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: sagarsanjay223@gmail.com</p>
+        <p>Mobile Number : 8088188439</p>
+    </section>
+
+    <!-- Your other sections and content can go here -->
+
+    <script>
+        const sections = {
+            "about": document.getElementById("about"),
+            "services": document.getElementById("services"),
+            "projects": document.getElementById("projects"),
+            "contact": document.getElementById("contact")
+        };
+
+        function hideAllSections() {
+            for (const section in sections) {
+                sections[section].style.display = "none";
+            }
+        }
+
+        function showSection(sectionId) {
+            hideAllSections();
+            sections[sectionId].style.display = "block";
+        }
+
+        // Initial state (hide all sections except "Home")
+        hideAllSections();
+
+        // Add click event listener to the "Home" link to hide all sections
+        document.querySelector('a[href="#home"]').addEventListener("click", () => hideAllSections());
+
+        // Add click event listeners to the other navigation links
+        document.querySelector('a[href="#about"]').addEventListener("click", () => showSection("about"));
+        document.querySelector('a[href="#services"]').addEventListener("click", () => showSection("services"));
+        document.querySelector('a[href="#projects"]').addEventListener("click", () => showSection("projects"));
+        document.querySelector('a[href="#contact"]').addEventListener("click", () => showSection("contact"));
+    </script>
+</body>
+</html>
